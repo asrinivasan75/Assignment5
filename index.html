@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emotion Bubble Journal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar Filters -->
+    <div class="sidebar">
+      <h2>Filters</h2>
+      <div class="filter-section">
+        <p><strong>Group by</strong></p>
+        <label><input type="radio" name="group" value="emotion"> Emotion</label><br>
+        <label><input type="radio" name="group" value="ideas" checked> Ideas</label>
+      </div>
+      <div class="filter-section">
+        <p><strong>Time Frame</strong></p>
+        <label><input type="radio" name="time" value="all" checked> All</label><br>
+        <label><input type="radio" name="time" value="1month"> 1 month</label><br>
+        <label><input type="radio" name="time" value="3months"> 3 months</label><br>
+        <label><input type="radio" name="time" value="1year"> 1 year</label>
+      </div>
+    </div>
+
+    <!-- Bubble Visualization -->
+    <div class="bubbles floating-layout">
+      <div class="bubble" style="--size: 37;">
+        <strong>Graduating College</strong>
+        <span>37 entries</span>
+      </div>
+      <div class="bubble" style="--size: 31;">
+        <strong>Career Success</strong>
+        <span>31 entries</span>
+      </div>
+      <div class="bubble" style="--size: 14;">
+        <strong>Friendships</strong>
+        <span>14 entries</span>
+      </div>
+      <div class="bubble" style="--size: 13;">
+        <strong>Letting Go</strong>
+        <span>13 entries</span>
+      </div>
+      <div class="bubble" style="--size: 7;">
+        <strong>Love</strong>
+        <span>7 entries</span>
+      </div>
+
+      <!-- Buttons -->
+      <button class="add-btn">+</button>
+      <button class="shuffle-btn">🔄</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
