@@ -1,158 +1,252 @@
 /* General Styles */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #fff5f3;
-    color: #3a2c1e;
-    overflow: hidden; /* prevent scrolling */
-  }
-  
-  /* Layout */
-  .container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    flex: 0 0 200px;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-right: 2px solid #ddd;
-    box-sizing: border-box;
-  }
-  
-  .filter-section {
-    margin-bottom: 20px;
-  }
-  
-  /* Bubbles Container */
-  .floating-layout {
-    position: relative;
-    flex: 1;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  /* Bubble Style */
-  .bubble {
-    position: absolute;
-    aspect-ratio: 1 / 1;
-    background-color: #ffc9a6;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-    opacity: 0;
-    overflow: hidden;
-    transition: left 0.5s ease, top 0.5s ease, opacity 0.5s ease;
-  }
-  
-  /* Animate AFTER placement */
-  .bubble.animate {
-    animation: fadeFloatIn 0.8s ease forwards, float 6s ease-in-out infinite;
-    animation-delay: 0s, 1s;
-  }
-  
-  /* Entry + Count */
-  .bubble strong {
-    font-size: clamp(12px, 1.6vw, 22px);
-    font-weight: bold;
-    line-height: 1.2;
-  }
-  .bubble span {
-    font-weight: normal;
-    font-size: clamp(10px, 1.2vw, 16px);
-  }
-  
-  /* Floating Animation */
-  @keyframes float {
-    0%, 100% {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff5f3;
+  color: #3a2c1e;
+  overflow: hidden;
+}
+
+/* Home Page Layout */
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 0 0 200px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-right: 2px solid #ddd;
+  box-sizing: border-box;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+/* Bubbles Container */
+.floating-layout {
+  position: relative;
+  flex: 1;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Bubble Style */
+.bubble {
+  position: absolute;
+  aspect-ratio: 1 / 1;
+  background-color: #ffc9a6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  opacity: 0;
+  overflow: hidden;
+  transition: left 0.5s ease, top 0.5s ease, opacity 0.5s ease;
+}
+
+.bubble.animate {
+  animation: fadeFloatIn 0.8s ease forwards, float 6s ease-in-out infinite;
+  animation-delay: 0s, 1s;
+}
+
+.bubble strong {
+  font-size: clamp(12px, 1.6vw, 22px);
+  font-weight: bold;
+  line-height: 1.2;
+}
+.bubble span {
+  font-weight: normal;
+  font-size: clamp(10px, 1.2vw, 16px);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
       transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
   }
-  
-  /* Entry Fade-In */
-  @keyframes fadeFloatIn {
-    0% {
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+/* Fade-In Animation */
+@keyframes fadeFloatIn {
+  0% {
       opacity: 0;
       transform: scale(0.8) translateY(10px);
-    }
-    100% {
+  }
+  100% {
       opacity: 1;
       transform: scale(1) translateY(0);
-    }
   }
-  
-  /* Add Button */
-  .add-btn {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background-color: #ff8a65;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 32px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease;
-    z-index: 1000;
-  }
-  .add-btn:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Shuffle Button */
-  .shuffle-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ff8a65;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 24px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s ease;
-    z-index: 1000;
-  }
-  .shuffle-btn:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .sidebar {
-      flex: 0 0 100%;
-      border-right: none;
-      border-bottom: 2px solid #ddd;
-    }
-  
-    .container {
-      flex-direction: column;
-    }
-  
-    .add-btn {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-  
+}
+
+/* Buttons (Home Page) */
+.add-btn, .shuffle-btn {
+  position: absolute;
+  background-color: #ff8a65;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+  z-index: 1000;
+}
+.add-btn {
+  bottom: 20px;
+  left: 20px;
+  font-size: 32px;
+  width: 50px;
+  height: 50px;
+}
+.shuffle-btn {
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+}
+.add-btn:hover, .add-btn:focus,
+.shuffle-btn:hover, .shuffle-btn:focus {
+  transform: scale(1.1);
+  outline: none;
+}
+
+/* Responsive Home Page */
+@media (max-width: 768px) {
+.sidebar {
+  flex: 0 0 100%;
+  border-right: none;
+  border-bottom: 2px solid #ddd;
+}
+.container {
+  flex-direction: column;
+}
+.add-btn {
+  left: 50%;
+  transform: translateX(-50%);
+}
+}
+
+/* Journal Page Styles */
+.journal-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff5f3;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.journal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.journal-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.back-btn {
+  background-color: #ff8a65;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: background-color 0.2s ease;
+}
+.back-btn:hover, .back-btn:focus {
+  background-color: #e67e52;
+  outline: none;
+}
+
+/* AI Insight Section */
+.ai-insight {
+  background-color: #ffe9de;
+  border-left: 4px solid #ff8a65;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Journal Entry Grid */
+.entries-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.entry-box {
+  background-color: #ffc9a6;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  min-height: 180px; /* Increased height for more room */
+}
+
+.entry-box:hover, .entry-box:focus {
+  transform: scale(1.02);
+  outline: none;
+}
+
+/* Modal Styles (Journal Entry Pop-Out) */
+.modal {
+display: none;
+position: fixed;
+z-index: 2000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+background-color: #fff;
+margin: 10% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 80%;
+max-width: 600px;
+border-radius: 8px;
+position: relative;
+outline: none;
+}
+
+.close-btn {
+color: #aaa;
+position: absolute;
+top: 10px;
+right: 15px;
+font-size: 28px;
+font-weight: bold;
+cursor: pointer;
+}
+.close-btn:hover,
+.close-btn:focus {
+color: black;
+text-decoration: none;
+outline: none;
+}

@@ -9,49 +9,61 @@
 <body>
   <div class="container">
     <!-- Sidebar Filters -->
-    <div class="sidebar">
+    <aside class="sidebar">
       <h2>Filters</h2>
       <div class="filter-section">
         <p><strong>Group by</strong></p>
-        <label><input type="radio" name="group" value="emotion"> Emotion</label><br>
-        <label><input type="radio" name="group" value="ideas" checked> Ideas</label>
+        <label>
+          <input type="radio" name="group" value="emotion" aria-label="Group by emotion"> Emotion
+        </label><br>
+        <label>
+          <input type="radio" name="group" value="ideas" checked aria-label="Group by ideas"> Ideas
+        </label>
       </div>
       <div class="filter-section">
         <p><strong>Time Frame</strong></p>
-        <label><input type="radio" name="time" value="all" checked> All</label><br>
-        <label><input type="radio" name="time" value="1month"> 1 month</label><br>
-        <label><input type="radio" name="time" value="3months"> 3 months</label><br>
-        <label><input type="radio" name="time" value="1year"> 1 year</label>
+        <label>
+          <input type="radio" name="time" value="all" checked aria-label="Show all entries"> All
+        </label><br>
+        <label>
+          <input type="radio" name="time" value="1month" aria-label="Last 1 month"> 1 month
+        </label><br>
+        <label>
+          <input type="radio" name="time" value="3months" aria-label="Last 3 months"> 3 months
+        </label><br>
+        <label>
+          <input type="radio" name="time" value="1year" aria-label="Last 1 year"> 1 year
+        </label>
       </div>
-    </div>
+    </aside>
 
     <!-- Bubble Visualization -->
-    <div class="bubbles floating-layout">
-      <div class="bubble" style="--size: 37;">
+    <main class="bubbles floating-layout">
+      <div class="bubble" style="--size: 37;" tabindex="0">
         <strong>Graduating College</strong>
         <span>37 entries</span>
       </div>
-      <div class="bubble" style="--size: 31;">
+      <div class="bubble" style="--size: 31;" tabindex="0">
         <strong>Career Success</strong>
         <span>31 entries</span>
       </div>
-      <div class="bubble" style="--size: 14;">
+      <div class="bubble" style="--size: 14;" tabindex="0">
         <strong>Friendships</strong>
         <span>14 entries</span>
       </div>
-      <div class="bubble" style="--size: 13;">
+      <div class="bubble" style="--size: 13;" tabindex="0">
         <strong>Letting Go</strong>
         <span>13 entries</span>
       </div>
-      <div class="bubble" style="--size: 7;">
+      <div class="bubble" style="--size: 7;" tabindex="0">
         <strong>Love</strong>
         <span>7 entries</span>
       </div>
 
       <!-- Buttons -->
-      <button class="add-btn">+</button>
-      <button class="shuffle-btn">🔄</button>
-    </div>
+      <button class="add-btn" aria-label="Add new journal entry">+</button>
+      <button class="shuffle-btn" aria-label="Shuffle bubbles">🔄</button>
+    </main>
   </div>
 
   <script src="script.js"></script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Journal Entries</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="journal-container">
+    <header class="journal-header">
+      <h1 id="journalTitle">Journal Entries</h1>
+      <button class="back-btn" aria-label="Back to home">← Back</button>
+    </header>
+
+    <!-- AI Insight Section -->
+    <section class="ai-insight">
+      <p>
+        <strong>AI Insight:</strong> 
+      </p>
+    </section>
+
+    <!-- Journal Entries Grid -->
+    <section id="journalEntries" class="entries-list">
+      <!-- Entry squares will be injected here -->
+    </section>
+  </div>
+
+  <!-- Modal for full journal entry pop-out -->
+  <div id="entryModal" class="modal" role="dialog" aria-modal="true">
+    <div id="modalContent" class="modal-content" tabindex="0">
+      <span id="modalCloseBtn" class="close-btn" aria-label="Close modal" tabindex="0">&times;</span>
+      <!-- Full entry content will be injected here -->
+    </div>
+  </div>
+
+  <!-- Include Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="journal.js"></script>
+</body>
+</html>
